@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>Core</ProjectName>
+      <PackageDescription>
+         Contains many basic helpers and base classes, useful in most C#.NET Framework projects. Including an injectable
+         DateTimeProvider, base classes for compact type converters and json converters, and a generic dependency
+         injection module base class to streamline splitting your registrations per module.
+      </PackageDescription>
+<!--      <TargetFrameworks>$(TargetFrameworks);netstandard2.1</TargetFrameworks>-->
+   </PropertyGroup>
+
+   <ItemGroup>
+      <PackageReference Condition="'$(TargetFramework)' == 'net8.0'" Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1"/>
+      <PackageReference Condition="'$(TargetFramework)' != 'net8.0'" Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0"/>
+   </ItemGroup>
+   
+</Project>

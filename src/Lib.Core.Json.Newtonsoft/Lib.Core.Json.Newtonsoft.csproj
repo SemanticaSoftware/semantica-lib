@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ProjectName>Core.Json.Newtonsoft</ProjectName>
+       <PackageDescription>
+          Provides identical json converter base classes to those provided in the Semantica.Lib.Core.Json namespace, but
+          inheriting from Newtonsoft.Json.JsonConverter rather than the System.Text.Json version.
+       </PackageDescription>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Lib.Extensions\Lib.Extensions.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
+</Project>

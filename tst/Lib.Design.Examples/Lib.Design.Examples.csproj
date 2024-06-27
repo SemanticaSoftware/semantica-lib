@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TestProject>Design</TestProject>
+        <RootNamespace>$(BaseNamespace)$(TestProject).Examples</RootNamespace>
+        <AssemblyName>$(BaseAssemblyName)$(TestProject).Examples</AssemblyName>
+        <DefineConstants>$(DefineConstants);DOMAIN</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="$(SourceFolder)Lib.Domain\Lib.Domain.csproj" />
+        <ProjectReference Include="$(SourceFolder)Lib.Domain.Data\Lib.Domain.Data.csproj" />
+        <ProjectReference Include="$(SourceFolder)Lib.Extensions\Lib.Extensions.csproj" />
+        <ProjectReference Include="$(SourceFolder)Lib.Linq\Lib.Linq.csproj" />
+        <ProjectReference Include="$(SourceFolder)Lib.Patterns\Lib.Patterns.csproj" />
+        <ProjectReference Include="$(SourceFolder)Lib.Storage\Lib.Storage.csproj" />
+        <ProjectReference Include="$(SourceFolder)Lib.Storage.Data\Lib.Storage.Data.csproj" />
+        <ProjectReference Include="$(SourceFolder)Lib.Storage.EntityFramework\Lib.Storage.EntityFramework.csproj" />
+    </ItemGroup>
+
+</Project>

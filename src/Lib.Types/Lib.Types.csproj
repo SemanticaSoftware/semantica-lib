@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>Types</ProjectName>
+      <PackageDescription>
+         A library that provides several value types and extensions for those types. This includes but is not limited to
+         DateSpan, EmailAddress, Hash, Link, RouteValues. These simple stucts can make your models and
+         method signatures more readable/expressive, and be useful to write extensions.
+
+         Includes Converters.TypeConverterRestistrations, a helper that can dynamically add typeconverter attributes to
+         types, eliminating the requirement to have your typeconverter classes in the same project as the types they can
+         convert, acting on the IRunTimeTypeConverter interface.
+
+         Provides types and helpers for code keys, a compact, human-readable encoding of integers.
+      </PackageDescription>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\Lib.Checks\Lib.Checks.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Collections\Lib.Collections.csproj" />
+      <ProjectReference Include="..\Lib.Core\Lib.Core.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Extensions\Lib.Extensions.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Linq\Lib.Linq.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Patterns\Lib.Patterns.csproj" />
+      <ProjectReference Include="..\Lib.Patterns.Converters\Lib.Patterns.Converters.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+   </ItemGroup>
+   
+</Project>

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>Domain</ProjectName>
+      <PackageDescription>
+         Provides a number of interfaces, types and attributes that can be used to make your domain-level entity classes more expressive.
+         Also defines a number of interfaces that provide a unitofwork/repository pattern. This package contains only the types that
+         represent the highest level of abstraction, making it possible to hide your storage layer models and interfaces from your
+         domain-level logic.
+      </PackageDescription>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\Lib.Checks\Lib.Checks.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Core\Lib.Core.csproj" />
+      <ProjectReference Include="..\Lib.Extensions\Lib.Extensions.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Linq\Lib.Linq.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Patterns\Lib.Patterns.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Patterns.Converters\Lib.Patterns.Converters.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+   </ItemGroup>
+   
+</Project>

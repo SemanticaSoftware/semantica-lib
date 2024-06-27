@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>Mvc</ProjectName>
+      <PackageDescription>
+         A library that provides types and extensions that help with configuration and specific usages of ASP.NET
+         applications.
+      </PackageDescription>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <FrameworkReference Include="Microsoft.AspNetCore.App" PrivateAssets="contentfiles;analyzers;build;compile" />
+   </ItemGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\Lib.Checks\Lib.Checks.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Extensions\Lib.Extensions.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Linq\Lib.Linq.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Types\Lib.Types.csproj" />
+   </ItemGroup>
+
+</Project>

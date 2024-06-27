@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>Domain.Data</ProjectName>
+      <PackageDescription>
+         Provides (base class) implementations of the repository interfaces from Sematica.Lib.Domain. These implementations generally
+         assume a strict separation between the domain-level entity models and storable counterparts used in the storage (persistence)
+         layer. For this, the repository base classes are dependent on injected implementations of the converter interfaces also provided
+         in this package. The repository base is also dependent on an injected IDataStore for the entity's storage type, and a
+         IPropertyAnalyser which is used to identify immutable properties on the storable model. Those properties will be ignored
+         when doing replaces/updates using the default implementations. The package provides a default implementation for this interface
+         that utilizes the ImmutableAttribute from the Semantica.Lib.Storage.Attributes namespace.
+
+         The repository base classes will implement all standard IRepository members, while additional required custom members can be
+         easily added.         
+      </PackageDescription>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\Lib.Checks\Lib.Checks.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Domain\Lib.Domain.csproj" />
+      <ProjectReference Include="..\Lib.Extensions\Lib.Extensions.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Linq\Lib.Linq.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Patterns\Lib.Patterns.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Patterns.Converters\Lib.Patterns.Converters.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Storage\Lib.Storage.csproj" />
+   </ItemGroup>
+
+</Project>

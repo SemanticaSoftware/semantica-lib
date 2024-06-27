@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>Storage.EntityFramework.SimpleInjector</ProjectName>
+      <PackageDescription></PackageDescription>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <PackageReference Condition="'$(TargetFramework)' == 'net8.0'" Include="Microsoft.EntityFrameworkCore" Version="8.0.6" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <PackageReference Condition="'$(TargetFramework)' != 'net8.0'" Include="Microsoft.EntityFrameworkCore" Version="6.0.27" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <PackageReference Include="SimpleInjector" Version="5.4.6" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <PackageReference Update="JetBrains.Annotations" Version="2023.3.0" />
+   </ItemGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\Lib.Core.SimpleInjector\Lib.Core.SimpleInjector.csproj" />
+      <ProjectReference Include="..\Lib.Domain\Lib.Domain.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Storage.EntityFramework\Lib.Storage.EntityFramework.csproj" />
+   </ItemGroup>
+
+</Project>

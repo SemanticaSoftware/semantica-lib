@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <TestProject>Core</TestProject>
+      <RootNamespace>$(BaseNamespace)$(TestProject).Test</RootNamespace>
+      <AssemblyName>$(BaseAssemblyName)$(TestProject).$(TestType)Test</AssemblyName>
+      <Nullable>enable</Nullable>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="$(SourceFolder)Lib.Checks\Lib.Checks.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Collections\Lib.Collections.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Core\Lib.Core.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Types\Lib.Types.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Extensions\Lib.Extensions.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Intervals\Lib.Intervals.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Linq\Lib.Linq.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Patterns\Lib.Patterns.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Patterns.Converters\Lib.Patterns.Converters.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.TestTools.Core\Lib.TestTools.Core.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Trees\Lib.Trees.csproj" />
+   </ItemGroup>
+   
+</Project>

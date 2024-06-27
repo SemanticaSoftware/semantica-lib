@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>Intervals</ProjectName>
+      <PackageDescription>
+         A library that provides types that can be used to represent intervals and collections of intervals as well as
+         extensions for these types.
+      </PackageDescription>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\Lib.Core\Lib.Core.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Linq\Lib.Linq.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Patterns\Lib.Patterns.csproj" />
+   </ItemGroup>
+
+</Project>

@@ -1,0 +1,18 @@
+@startuml
+interface IIdKey<T> {
+    T Id
+}
+interface ISimpleKey<TSelf, T> {
+    T? : AsNullableId()
+    bool : IsEmpty()
+    {static} FromNullableId(T? id)
+}
+interface IIdentityKey
+interface IIdentityKey_<TSelf>
+interface ISubKey<TKey>
+
+IIdKey <|-- ISimpleKey
+IIdKey <|-- "T=int" IIdentityKey
+IIdentityKey <|-- IIdentityKey_
+ISimpleKey <|-- IIdentityKey_
+@enduml

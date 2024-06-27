@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>Trees</ProjectName>
+      <PackageDescription>
+         A library that provides types that can be used to represent trees, tree nodes and tree paths, as well as
+         extensions and helpers for these types. The interfaces for both the nodes and collections of nodes are all
+         simplified. Helpers include builders, tree->tree converters, and write only json converters.
+      </PackageDescription>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\Lib.Checks\Lib.Checks.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Collections\Lib.Collections.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Core\Lib.Core.csproj" />
+      <ProjectReference Include="..\Lib.Linq\Lib.Linq.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Patterns\Lib.Patterns.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+   </ItemGroup>
+
+</Project>

@@ -1,0 +1,29 @@
+<Project>
+    <Import Project="..\Solution.Build.props"/>
+    
+    <PropertyGroup>
+        <BaseNamespace>$(BaseNamespace).Lib.Tests.</BaseNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyOriginatorKeyFile>$(SemanticaLibSolutionDir)Semantica.Lib.snk</AssemblyOriginatorKeyFile>
+        <Configurations>Debug;Release</Configurations>
+        <IsPackable>false</IsPackable>
+        <SignAssembly>true</SignAssembly>
+        <TargetFramework>net8.0</TargetFramework>
+        <DefineConstants>$(DefineConstants);CONTRACTS</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Product>Semantica Lib</Product>
+        <Version>6</Version>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(TestProject)' != ''">
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+        <PackageReference Include="Moq" Version="4.20.70" />
+        <PackageReference Include="MSTest.TestAdapter" Version="3.4.3" />
+        <PackageReference Include="MSTest.TestFramework" Version="3.4.3" />
+    </ItemGroup>
+
+</Project>

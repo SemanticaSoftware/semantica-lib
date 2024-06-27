@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>Checks</ProjectName>
+      <PackageDescription>
+         A library that provides types and statics to streamline guards and validations. The Chk and Chk&lt;T&gt; value types 
+         provide boolean-like behaviour but can be combined with a reason and/or a payload. ``Guard`` static methods throws
+         exceptions when checks fail.
+      </PackageDescription>
+   </PropertyGroup>
+   
+   <ItemGroup>
+      <ProjectReference Include="..\Lib.Patterns\Lib.Patterns.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+   </ItemGroup>
+
+</Project>

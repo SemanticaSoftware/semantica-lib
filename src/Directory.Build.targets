@@ -1,0 +1,31 @@
+<Project>
+
+    <PropertyGroup>
+        <RootNamespace>$(BaseNamespace).$(ProjectName)</RootNamespace>
+        <AssemblyName>$(BaseAssemblyName)$(ProjectName)</AssemblyName>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <None Include="ReadMe.md" Pack="true" PackagePath="\"/>
+        <Content Include="$(SemanticaLibSolutionDir)Semantica_logo.png" Link="Semantica_logo.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
+    
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="'$(OS)' == 'Windows_NT' And ('$(ConfigurationName)' == 'Debug')">
+        <PropertyGroup>
+            <OldPackages>$(OutputFolder)$(ConfigurationName)\$(PackageWildcard)</OldPackages>
+        </PropertyGroup>
+
+        <Message Text="delete $(OldPackages)" Condition="Exists('$(OldPackages)')" />
+        <Exec Command="del /s &quot;$(OldPackages)&quot;" Condition="Exists('$(OldPackages)')" />
+    </Target>
+
+    <Target Name="CopyPackage" AfterTargets="Pack" Condition="'$(ConfigurationName)' == 'Debug'">
+        <PropertyGroup>
+            <PackageFile>$(PackageId).$(PackageVersion).nupkg</PackageFile>
+        </PropertyGroup>
+
+        <Message Text="Copy $(OutputFolder)$(ConfigurationName)\$(PackageFile) to $(NugetStore)" Condition="!Exists('$(NugetStore)$(PackageFile)')" />
+        <Copy SourceFiles="$(OutputFolder)$(ConfigurationName)\$(PackageFile)" DestinationFolder="$(NugetStore)" Condition="!Exists('$(NugetStore)$(PackageFile)')" />
+    </Target>
+
+</Project>

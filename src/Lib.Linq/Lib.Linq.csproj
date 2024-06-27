@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>Linq</ProjectName>
+      <PackageDescription>
+         A library that provides extensions that expand on the standard System.Linq functionality on IEnumerable&lt;T&gt; and
+         IQueryable&lt;T&gt;, as well as provide optimized extensions/overloads for the IReadOnlyList&lt;T&gt;,
+         IReadOnlyCollection&lt;T&gt; and IReadOnlyDictionary&lt;TKey,T&gt; interfaces.
+      </PackageDescription>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\Lib.Checks\Lib.Checks.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Core\Lib.Core.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+   </ItemGroup>
+
+</Project>

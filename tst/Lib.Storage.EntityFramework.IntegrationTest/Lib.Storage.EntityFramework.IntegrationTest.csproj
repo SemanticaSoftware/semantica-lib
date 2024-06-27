@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <TestProject>Storage.EntityFramework</TestProject>
+      <TestType>Integration</TestType>
+      <RootNamespace>$(BaseNamespace)$(TestProject).Test</RootNamespace>
+      <AssemblyName>$(BaseAssemblyName)$(TestProject).$(TestType)Test</AssemblyName>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.6" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="SimpleInjector" Version="5.4.6" />
+   </ItemGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="$(SourceFolder)Lib.Checks\Lib.Checks.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Core\Lib.Core.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Domain.Data\Lib.Domain.Data.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Extensions\Lib.Extensions.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Linq\Lib.Linq.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Ordering\Lib.Ordering.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Patterns\Lib.Patterns.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Patterns.Converters\Lib.Patterns.Converters.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Storage.EntityFramework.SimpleInjector\Lib.Storage.EntityFramework.SimpleInjector.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.TestTools.SimpleInjector\Lib.TestTools.SimpleInjector.csproj" />
+   </ItemGroup>
+
+</Project>

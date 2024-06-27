@@ -1,0 +1,26 @@
+<Project>
+
+    <PropertyGroup>
+        <BaseNamespace>Semantica</BaseNamespace>
+        <NamespacePrefix>$(BaseNamespace).</NamespacePrefix>
+        <BaseAssemblyName>Semantica.Lib.</BaseAssemblyName>
+        <SemanticaLibSolutionDir>..\..\</SemanticaLibSolutionDir>
+        <SourceFolder>$(SemanticaLibSolutionDir)src\</SourceFolder>
+        <OutputFolder>$(ProjectDir)bin\</OutputFolder>
+        <NugetStore>$(SemanticaLibSolutionDir)nuget\</NugetStore>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageWildcard>*.nupkg</PackageWildcard>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition="'$(ConfigurationName)' != 'Release'">
+        <DefineConstants>$(DefineConstants);DEBUGGUARD</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Authors>Janne Louw</Authors>
+        <Company>Semantica B.V.</Company>
+		<Copyright>Semantica B.V. 2024</Copyright>
+        <Version>8.0.3-beta</Version>
+    </PropertyGroup>
+    
+</Project>

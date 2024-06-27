@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>TestTools.Core</ProjectName>
+      <PackageDescription>
+         Provides a set of specific MSTest.Assert extensions (Assert.That.), to facilitate more compact assertions, and more
+         comprehensive fail messages. Assertions include epsilon-checking for floating point types, default/empty checking for
+         enums, strings, ICanBeEmpty, etc., DateOnly/DateTime part assertions, as well as assertions for the 
+         Semantica.Lib.Checks.Chk type.
+         
+         Also contains a convenient mock for Semantica.Lib.Core.Providers.IDateTimeProvider, and ModuleTestBase, an abstract base
+         class to facilitate making unit tests for DI modules based on Semantica.Lib.Core.DependencyInjection.ModuleBase.
+      </PackageDescription>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <PackageReference Include="Moq" Version="4.20.70" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <PackageReference Include="MSTest.TestFramework" Version="3.4.3" PrivateAssets="contentfiles;analyzers;build;compile" />
+   </ItemGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\Lib.Checks\Lib.Checks.csproj" />
+      <ProjectReference Include="..\Lib.Core\Lib.Core.csproj" />
+      <ProjectReference Include="..\Lib.Extensions\Lib.Extensions.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Types\Lib.Types.csproj" />
+      <ProjectReference Include="..\Lib.Intervals\Lib.Intervals.csproj" />
+      <ProjectReference Include="..\Lib.Patterns\Lib.Patterns.csproj" />
+   </ItemGroup>
+
+</Project>

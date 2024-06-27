@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>Patterns</ProjectName>
+      <PackageDescription>
+         Contains several basic interfaces generally usable for value types or data structure classes.
+         Also contains a collection of extensions that work on (collections of) those interfaces.
+      </PackageDescription>
+   </PropertyGroup>
+
+</Project>

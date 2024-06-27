@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>Storage.Data</ProjectName>
+      <PackageDescription>
+         Provides implementations for the abstractions provided by Semantica.Lib.Storage that are independent of EntityFramework.
+         At the moment, that's only the StorageCache implementation.
+      </PackageDescription>
+   </PropertyGroup>
+   
+   <ItemGroup>
+      <ProjectReference Include="..\Lib.Domain\Lib.Domain.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Storage\Lib.Storage.csproj" />
+   </ItemGroup>
+
+</Project>

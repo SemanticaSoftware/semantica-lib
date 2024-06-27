@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <TestProject>Design</TestProject>
+      <RootNamespace>$(BaseNamespace)$(TestProject).Test</RootNamespace>
+      <AssemblyName>$(BaseAssemblyName)$(TestProject).$(TestType)Test</AssemblyName>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
+         <PrivateAssets>all</PrivateAssets>
+         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.6" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />      
+      <PackageReference Include="SimpleInjector" Version="5.4.6" />
+   </ItemGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\..\src\Lib.Mvc.Rendering\Lib.Mvc.Rendering.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Mvc\Lib.Mvc.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.TestTools.SimpleInjector\Lib.TestTools.SimpleInjector.csproj" />
+      <ProjectReference Include="..\Lib.Design.Examples\Lib.Design.Examples.csproj" />
+   </ItemGroup>
+   
+</Project>

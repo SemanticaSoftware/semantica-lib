@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <TestProject>Core</TestProject>
+      <TestType>Performance</TestType>
+      <RootNamespace>$(BaseNamespace)$(TestProject).Test</RootNamespace>
+      <AssemblyName>$(BaseAssemblyName)$(TestProject).$(TestType)Test</AssemblyName>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <PackageReference Include="SimpleInjector" Version="5.4.6" />
+   </ItemGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="$(SourceFolder)Lib.Collections\Lib.Collections.csproj" />
+      <ProjectReference Include="$(SourceFolder)Lib.Mvc\Lib.Mvc.csproj" />
+   </ItemGroup>
+
+</Project>

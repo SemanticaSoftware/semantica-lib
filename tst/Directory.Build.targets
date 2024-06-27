@@ -1,0 +1,8 @@
+<Project>
+
+    <PropertyGroup>
+<!--        <RootNamespace>$(BaseNamespace)$(TestProject).Test</RootNamespace>-->
+<!--        <AssemblyName>$(BaseAssemblyName)$(TestProject).$(TestType)Test</AssemblyName>-->
+    </PropertyGroup>
+
+</Project>

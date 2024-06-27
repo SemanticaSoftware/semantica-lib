@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>Collections</ProjectName>
+      <PackageDescription>
+         A library that provides a number of collection types that can help with either more readable/elegant syntax, or 
+         improved performance compared to native collection types.
+      </PackageDescription>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\Lib.Checks\Lib.Checks.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Linq\Lib.Linq.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <ProjectReference Include="..\Lib.Patterns\Lib.Patterns.csproj" PrivateAssets="contentfiles;analyzers;build;compile" />
+   </ItemGroup>
+
+</Project>

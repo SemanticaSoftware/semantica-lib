@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <ProjectName>TestTools.SimpleInjector</ProjectName>
+      <PackageDescription>
+         Provides two abstract base classes in order make compact unit tests that verify registrations of your DI modules based on
+         Semantica.Lib.Core.DependencyInjection.ModuleBase. Use ContainerModuleTestBase to make unit tests when you use
+         SimpleInjector.Container as your DI container, or ServiceCollectionModuleTestBase to make unit tests when you use
+         System.Extensions.DependencyInjection.IServiceCollection as you DI container.
+
+         Both implementations leverage SimpleInjector's Container.Verify() method for registration validation.
+      </PackageDescription>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <PackageReference Include="Moq" Version="4.20.70" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <PackageReference Include="MSTest.TestFramework" Version="3.4.3" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <PackageReference Include="SimpleInjector" Version="5.4.6" />
+   </ItemGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\Lib.Core.SimpleInjector\Lib.Core.SimpleInjector.csproj" />
+      <ProjectReference Include="..\Lib.TestTools.Core\Lib.TestTools.Core.csproj" />
+   </ItemGroup>
+
+</Project>

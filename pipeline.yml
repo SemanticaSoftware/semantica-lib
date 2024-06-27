@@ -1,0 +1,30 @@
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+
+variables:
+- name: 'poolName'
+  value: 'windows-latest'
+- name: 'isMaster'
+  value: ${{ eq(variables['Build.SourceBranch'], 'refs/heads/master') }}
+  
+stages:
+- stage: Build
+  displayName: 'Build'
+  jobs:
+  - template: build.yml
+    parameters:
+      poolName: '$(poolName)'
+      isMaster: ${{ variables.isMaster }}
+
+- stage: Release
+  displayName: 'Release'
+  dependsOn: Build
+  condition: and(succeeded(), ${{ variables.isMaster }})
+  jobs:
+  - template: release.yml
+    parameters:
+      poolName: '$(poolName)'
+      isMaster: ${{ variables.isMaster }}

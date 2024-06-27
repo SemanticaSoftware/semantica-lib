@@ -1,0 +1,81 @@
+parameters:
+- name: poolName
+  type: string
+- name: isMaster
+  type: boolean
+
+jobs:
+- job: Build
+  displayName: 'Build Semantica.Lib'
+  workspace:
+    clean: true
+  pool:
+    vmImage: ${{ parameters.poolName }}
+  
+  variables:
+    solution: 'Semantica.Lib.sln'
+    buildPlatform: 'Any CPU'
+    buildConfiguration: 'Release'
+  
+  steps:
+  - task: UseDotNet@2
+    displayName: 'Use .NET Core sdk 8.x'
+    inputs:
+      packageType: sdk
+      version: 8.x
+      installationPath: '$(Agent.ToolsDirectory)/dotnet'
+
+  - task: NuGetToolInstaller@0
+    displayName: 'Use NuGet 6.5.0'
+    inputs:
+      versionSpec: 6.5.0
+  
+  - task: NuGetCommand@2
+    displayName: 'NuGet restore'
+    inputs:
+      restoreSolution: '$(solution)'
+      
+  # ########################################################
+  # Build solution met VSBuild  
+  - task: VSBuild@1
+    displayName: '$(solution) VSBuild'
+    inputs:
+      solution: '$(solution)'
+      platform: '$(buildPlatform)'
+      configuration: '$(buildConfiguration)'
+      msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:AutoParameterizationWebConfigConnectionStrings=False /p:PackageLocation="$(build.artifactStagingDirectory)"'
+      restoreNugetPackages: false
+      #clean: false # Optional
+      #logProjectEvents: true # Optional
+      #createLogFile: false # Optional
+      #logFileVerbosity: 'normal' # Optional. Options: quiet, minimal, normal, detailed, diagnostic
+  
+  # ########################################################
+  # Run Unit Tests
+  - task: DotNetCoreCLI@2
+    displayName: 'Run unit tests'
+    inputs:
+      command: 'test'
+      #platform: '$(buildPlatform)'
+      #restoreNugetPackages: false
+      projects: 'tst/**/*.Test.csproj'
+      testRunTitle: '**/*[tT]est.*'
+      arguments: '--configuration $(buildConfiguration) --no-build'
+        
+  # ########################################################
+  # Package
+  - task: DotNetCoreCLI@2
+    displayName: 'Package solution'
+    condition: ${{ parameters.isMaster }}
+    inputs:
+      command: 'pack'
+      packagesToPack: 'Semantica.Lib.sln'
+      packDirectory: '$(Build.ArtifactStagingDirectory)/nuget'
+      restoreNugetPackages: false
+      versioningScheme: 'off'
+      versionEnvVar: 'Build.BuildNumber'
+  
+  - publish: '$(Build.ArtifactStagingDirectory)/nuget'
+    displayName: 'Publish NuGet packages for release'
+    condition: ${{ parameters.isMaster }}
+    artifact: 'nuget'

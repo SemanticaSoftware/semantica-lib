@@ -1,0 +1,28 @@
+parameters:
+- name: poolName
+  type: string
+- name: isMaster
+  type: boolean
+
+jobs:
+- deployment: Release
+  displayName: 'Release to nuget.org'
+  environment: 'main'
+  pool:
+    vmImage: ${{ parameters.poolName }}
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - download: current
+          displayName: 'Download pacakges from pipeline artifact'
+          artifact: 'nuget'
+
+        - task: NuGetCommand@2
+          displayName: 'Push packages'
+          condition: ${{ parameters.isMaster }}
+          inputs:
+            command: 'push'
+            packagesToPush: '$(Pipeline.Workspace)/nuget/**/*.nupkg;!$(Pipeline.Workspace)/nuget/**/*.symbols.nupkg'
+            nuGetFeedType: 'external'
+            publishFeedCredentials: 'NuGet Semantica Lib CI'
