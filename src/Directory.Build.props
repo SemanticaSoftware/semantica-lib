@@ -5,16 +5,21 @@
         <AssemblyOriginatorKeyFile>$(SemanticaLibSolutionDir)Semantica.Lib.snk</AssemblyOriginatorKeyFile>
         <Configurations>Debug;Release</Configurations>
         <DebugType>embedded</DebugType>
+        <DocumentationMarkdown>$(MSBuildProjectDirectory)\ReadMe.XmlDoc.md</DocumentationMarkdown>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <IncludeSymbols>true</IncludeSymbols>
         <NoWarn>$(NoWarn);1591</NoWarn>
         <Nullable>enable</Nullable>
         <PackageIcon>Semantica_logo.png</PackageIcon>
         <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/semanticasoftware/semantica-lib</RepositoryUrl>
         <SignAssembly>true</SignAssembly>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 <!--        <TargetFramework>net8.0</TargetFramework>-->
         <TargetFrameworks>net8.0;net7.0;net6.0</TargetFrameworks>
     </PropertyGroup>
@@ -39,7 +44,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.SourceLink.AzureRepos.Git" Version="8.0.0" PrivateAssets="All"/>
+        <PackageReference Include="Microsoft.SourceLink.AzureRepos.Git" Version="8.0.0" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+        <PackageReference Include="Vsxmd" Version="1.4.5" PrivateAssets="All" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
         <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" PrivateAssets="All" />
     </ItemGroup>
 

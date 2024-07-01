@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		build.yml = build.yml
 		release.yml = release.yml
 		Solution.Build.props = Solution.Build.props
+		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sources", "Sources", "{975B2577-1364-4568-8B2B-823FD61F54E6}"
@@ -97,6 +98,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{F5EB19D9-24A
 	ProjectSection(SolutionItems) = preProject
 		doc\Semantica.Lib Core dependencies.png = doc\Semantica.Lib Core dependencies.png
 		doc\members.md = doc\members.md
+		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.Design.Examples", "tst\Lib.Design.Examples\Lib.Design.Examples.csproj", "{EE01118F-ED7E-4074-8F17-F50FE75EAB8A}"

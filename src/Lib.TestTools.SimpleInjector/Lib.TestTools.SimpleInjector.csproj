@@ -13,9 +13,9 @@
    </PropertyGroup>
 
    <ItemGroup>
-      <PackageReference Include="Moq" Version="4.20.70" PrivateAssets="contentfiles;analyzers;build;compile" />
-      <PackageReference Include="MSTest.TestFramework" Version="3.4.3" PrivateAssets="contentfiles;analyzers;build;compile" />
-      <PackageReference Include="SimpleInjector" Version="5.4.6" />
+      <PackageReference Include="Moq" Version="4.20.69" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <PackageReference Include="MSTest.TestFramework" Version="3.4.0" PrivateAssets="contentfiles;analyzers;build;compile" />
+      <PackageReference Include="SimpleInjector" Version="5.4.0" />
    </ItemGroup>
 
    <ItemGroup>

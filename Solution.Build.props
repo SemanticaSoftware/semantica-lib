@@ -20,7 +20,7 @@
         <Authors>Janne Louw</Authors>
         <Company>Semantica B.V.</Company>
 		<Copyright>Semantica B.V. 2024</Copyright>
-        <Version>8.0.3-beta</Version>
+        <Version>8.0.4-beta</Version>
     </PropertyGroup>
     
 </Project>

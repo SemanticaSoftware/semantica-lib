@@ -3,10 +3,13 @@
     <PropertyGroup>
         <RootNamespace>$(BaseNamespace).$(ProjectName)</RootNamespace>
         <AssemblyName>$(BaseAssemblyName)$(ProjectName)</AssemblyName>
+        <TargetFrameworkMonikerAssemblyAttributesPath>$([System.IO.Path]::Combine('$(IntermediateOutputPath)','$(TargetFrameworkMoniker).AssemblyAttributes$(DefaultLanguageSourceExtension)'))</TargetFrameworkMonikerAssemblyAttributesPath>
     </PropertyGroup>
     
     <ItemGroup>
         <None Include="ReadMe.md" Pack="true" PackagePath="\"/>
+        <!-- https://github.com/dotnet/sourcelink/issues/572 -->
+        <EmbeddedFiles Include="$(GeneratedAssemblyInfoFile)"/>
         <Content Include="$(SemanticaLibSolutionDir)Semantica_logo.png" Link="Semantica_logo.png" Pack="true" PackagePath="\" />
     </ItemGroup>
     
