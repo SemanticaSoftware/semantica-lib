@@ -4,7 +4,7 @@
     <PropertyGroup>
         <AssemblyOriginatorKeyFile>$(SemanticaLibSolutionDir)Semantica.Lib.snk</AssemblyOriginatorKeyFile>
         <Configurations>Debug;Release</Configurations>
-        <DebugType>embedded</DebugType>
+        <DebugType>full</DebugType>
         <DocumentationMarkdown>$(MSBuildProjectDirectory)\ReadMe.XmlDoc.md</DocumentationMarkdown>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
@@ -20,13 +20,14 @@
         <RepositoryUrl>https://github.com/semanticasoftware/semantica-lib</RepositoryUrl>
         <SignAssembly>true</SignAssembly>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-<!--        <TargetFramework>net8.0</TargetFramework>-->
         <TargetFrameworks>net8.0;net7.0;net6.0</TargetFrameworks>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+<!--        <TargetFramework>net8.0</TargetFramework>-->
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
         <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <PropertyGroup>

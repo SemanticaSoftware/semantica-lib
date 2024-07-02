@@ -25,17 +25,32 @@ jobs:
       version: 8.x
       installationPath: '$(Agent.ToolsDirectory)/dotnet'
 
-  - task: NuGetToolInstaller@0
-    displayName: 'Use NuGet 6.5.0'
-    inputs:
-      versionSpec: 6.5.0
+#  - task: NuGetToolInstaller@0
+#    displayName: 'Use NuGet 6.5.0'
+#    inputs:
+#      versionSpec: 6.5.0
   
-  - task: NuGetCommand@2
-    displayName: 'NuGet restore'
+#  - task: NuGetCommand@2
+#    displayName: 'NuGet restore'
+#    inputs:
+#      restoreSolution: '$(solution)'
+        
+  - task: DotNetCoreCLI@2
+    displayName: 'Restore packages'
     inputs:
-      restoreSolution: '$(solution)'
+        command: 'restore'
+        projects: '$(solution)'
       
   # ########################################################
+#  # Build solution with dotnet build
+#  ##gives: error MSB1008: Only one project can be specified.
+#  - task: DotNetCoreCLI@2
+#    displayName: 'Build $(solution)'
+#    inputs:
+#        command: 'build'
+#        projects: '$(solution)'
+#        arguments: '--configuration $(buildConfiguration) --runtime $(buildPlatform) --no-restore'
+
   # Build solution met VSBuild  
   - task: VSBuild@1
     displayName: '$(solution) VSBuild'
@@ -71,6 +86,7 @@ jobs:
       command: 'pack'
       packagesToPack: 'Semantica.Lib.sln'
       packDirectory: '$(Build.ArtifactStagingDirectory)/nuget'
+      nobuild: true
       restoreNugetPackages: false
       versioningScheme: 'off'
       versionEnvVar: 'Build.BuildNumber'

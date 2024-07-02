@@ -4,24 +4,29 @@
     <PropertyGroup>
         <AssemblyOriginatorKeyFile>$(SemanticaLibSolutionDir)Semantica.Lib.snk</AssemblyOriginatorKeyFile>
         <Configurations>Debug;Release</Configurations>
-        <DebugType>embedded</DebugType>
+        <DebugType>full</DebugType>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <IncludeSymbols>true</IncludeSymbols>
         <NoWarn>$(NoWarn);1591</NoWarn>
         <Nullable>enable</Nullable>
         <PackageIcon>Semantica_logo.png</PackageIcon>
         <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/semanticasoftware/semantica-lib</RepositoryUrl>
         <SignAssembly>true</SignAssembly>
-<!--        <TargetFramework>net7.0</TargetFramework>-->
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <TargetFrameworks>net8.0;net7.0;net6.0</TargetFrameworks>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+<!--        <TargetFramework>net8.0</TargetFramework>-->
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
         <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <PropertyGroup>
