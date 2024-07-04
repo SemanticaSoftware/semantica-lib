@@ -4,7 +4,7 @@
     <PropertyGroup>
         <AssemblyOriginatorKeyFile>$(SemanticaLibSolutionDir)Semantica.Lib.snk</AssemblyOriginatorKeyFile>
         <Configurations>Debug;Release</Configurations>
-        <DebugType>full</DebugType>
+        <DebugType>portable</DebugType>
         <DocumentationMarkdown>$(MSBuildProjectDirectory)\ReadMe.XmlDoc.md</DocumentationMarkdown>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
